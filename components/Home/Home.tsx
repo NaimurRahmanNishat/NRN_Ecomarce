@@ -1,8 +1,14 @@
-import React from 'react'
+import AllProduct from './AllProduct';
+import Category from './Category';
+import Hero from './Hero';
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+      <Hero/>
+      <Category/>
+      <AllProduct/>
+    </div>
   )
 }
 

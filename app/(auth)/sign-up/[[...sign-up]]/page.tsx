@@ -1,9 +1,12 @@
+import { SignUp } from '@clerk/nextjs';
 import React from 'react'
 
-const SignUp = () => {
+const SignUpPage = () => {
   return (
-    <div>SignUp</div>
+    <div className="flex items-center justify-center h-screen w-full">
+      <SignUp/>
+    </div>
   )
 }
 
-export default SignUp;
+export default SignUpPage;
