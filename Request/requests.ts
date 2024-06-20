@@ -11,3 +11,18 @@ export async function getAllProduct() {
     );
     return productRes.json();
 }
+
+
+export async function getSingleProduct(id:string) {
+    const productRes = await fetch(
+        `https://fakestoreapi.com/products/${id}`
+    );
+    return productRes.json();
+}
+
+export async function getProductByCategory(category:string) {
+    const productRes = await fetch(
+        `https://fakestoreapi.com/products/category/${category}`
+    );
+    return productRes.json();
+}

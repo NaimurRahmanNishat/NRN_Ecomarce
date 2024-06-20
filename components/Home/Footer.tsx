@@ -49,7 +49,7 @@ const Footer = () => {
       {/* copyright */}
       <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 justify-between w-4/5 mx-auto">
         <p className="text-sm text-black opacity-60">
-          copyright @{new Date().getFullYear()} nrnwarriors.
+          copyright @{new Date().getFullYear()} NRNWarriors.
         </p>
         <Image
           src="/images/pay.svg"
