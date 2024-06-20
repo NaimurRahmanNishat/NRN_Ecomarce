@@ -8,7 +8,7 @@ import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 
 const Cart = () => {
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
   // Get our cart items
   const items = useSelector((state: RooteState) => state.cart.item);
   // Calculating Total Quantity.
@@ -25,17 +25,17 @@ const Cart = () => {
   const totalPriceWithVat = (+totalPrice + +vat).toFixed(2);
 
   // Get authenticate user
-  const {user} = useUser();
+  const { user } = useUser();
 
   // Add item
-  const addItemHandler = (item:cartItem)=>{
+  const addItemHandler = (item: cartItem) => {
     dispatch(addItem(item));
-  }
+  };
 
-    // remove item
-    const removeItemHandler = (id:number)=>{
-        dispatch(removeItem({id}));
-      }
+  // remove item
+  const removeItemHandler = (id: number) => {
+    dispatch(removeItem({ id }));
+  };
 
   return (
     <div className="mt-8 min-h-[60vh]">
@@ -89,8 +89,21 @@ const Cart = () => {
                         Quantity: {item.quantity}
                       </h1>
                       <div className="flex items-center mt-4 space-x-2">
-                        <Button onClick={()=>{addItemHandler(item)}}>Add More</Button>
-                        <Button onClick={()=>{removeItemHandler(item.id)}} variant={"destructive"}>Remove</Button>
+                        <Button
+                          onClick={() => {
+                            addItemHandler(item);
+                          }}
+                        >
+                          Add More
+                        </Button>
+                        <Button
+                          onClick={() => {
+                            removeItemHandler(item.id);
+                          }}
+                          variant={"destructive"}
+                        >
+                          Remove
+                        </Button>
                       </div>
                     </div>
                   </div>
@@ -124,15 +137,15 @@ const Cart = () => {
               </div>
               {!user && (
                 <Link href="/sign-in">
-                    <Button className="bg-orange-500 w-full">Sign In to Checkout</Button>
+                  <Button className="bg-orange-500 w-full">
+                    Sign In to Checkout
+                  </Button>
                 </Link>
               )}
-              {
-                user && (
-                    // paypal button
-                    <Button className="w-full bg-orange-500">Paypal</Button>
-                )
-              }
+              {user && (
+                // // paypal button
+                 <Button className="w-full bg-orange-500">Paypal</Button>
+              )}
             </div>
           </div>
         </div>
